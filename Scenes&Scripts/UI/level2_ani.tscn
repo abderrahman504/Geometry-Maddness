@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/justicegradout.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes&Scripts/UI/level2_ani.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 2
+outline_color = Color( 0.0273438, 0.0265961, 0.0265961, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Nuova Animazione"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 8, 8 ), Vector2( 0.1, 0.1 ) ]
+}
+
+[node name="Level2Transition" type="Node2D"]
+pause_mode = 2
+position = Vector2( 671.348, 292.507 )
+scale = Vector2( 5.32438, 5.32438 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -51.092
+margin_top = -14.684
+margin_right = 56.908
+margin_bottom = 22.316
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[rainbow]level 2"
+text = "level 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+"anims/Nuova Animazione" = SubResource( 2 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

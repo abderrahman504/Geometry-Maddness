@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Effects/Hit effect32x32.png" type="Texture" id=1]
+[ext_resource path="res://Scenes&Scripts/Other/HitEffect.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Hit"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
+
+[node name="HitEffect" type="Sprite"]
+position = Vector2( 662.801, 364.189 )
+z_index = 1
+texture = ExtResource( 1 )
+vframes = 2
+hframes = 5
+region_enabled = true
+region_rect = Rect2( 0, 0, 160, 64 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.0
+anims/Hit = SubResource( 1 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

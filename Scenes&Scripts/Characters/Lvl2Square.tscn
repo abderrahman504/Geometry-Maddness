@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes&Scripts/Characters/Square.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes&Scripts/Characters/Lvl2Square.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 251.718
+
+[node name="Lvl2Square" instance=ExtResource( 1 )]
+position = Vector2( 1.41418, 0 )
+script = ExtResource( 2 )
+enemySpeed = 120.0
+dodgeDistance = 120
+
+[node name="BulletDetector" type="Area2D" parent="." index="3"]
+visible = false
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletDetector" index="0"]
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="BulletDetector" to="." method="on_bullet_detected"]

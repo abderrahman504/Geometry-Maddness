@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ButtonMenu1.tres" type="StyleBox" id=1]
+[ext_resource path="res://ButtonMenu2.tres" type="StyleBox" id=2]
+[ext_resource path="res://Scenes&Scripts/UI/Menubutton.gd" type="Script" id=3]
+[ext_resource path="res://Music/SoundEffects/switch9.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Music/SoundEffects/switch22.ogg" type="AudioStream" id=5]
+
+[node name="Button" type="Button"]
+margin_right = 64.0
+margin_bottom = 24.0
+custom_styles/hover = ExtResource( 1 )
+custom_styles/pressed = ExtResource( 2 )
+custom_styles/focus = ExtResource( 1 )
+custom_styles/normal = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Switch" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 4 )
+
+[node name="Press" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 5 )
+volume_db = 11.143

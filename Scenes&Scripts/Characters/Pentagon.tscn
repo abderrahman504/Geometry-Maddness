@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes&Scripts/Characters/BaseEnemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Shapes/Pentagon.png" type="Texture" id=2]
+[ext_resource path="res://Scenes&Scripts/Guns/HeavyCanon.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes&Scripts/Characters/Pentagon.gd" type="Script" id=4]
+
+[node name="Pentagon" instance=ExtResource( 1 )]
+position = Vector2( 20.5752, 9.28859 )
+script = ExtResource( 4 )
+enemySpeed = 300.0
+attackInterval = 5.0
+
+[node name="CollisionPolygon2D" parent="." index="0"]
+rotation = 1.5708
+polygon = PoolVector2Array( -0.134405, -47.6658, 45.7514, -14.8905, 32.2668, 43.7308, -32.7223, 43.5437, -45.8326, -14.7029 )
+
+[node name="Sprite" parent="." index="1"]
+modulate = Color( 0.0901961, 0.309804, 0.894118, 1 )
+position = Vector2( 1.77946, -0.115845 )
+rotation = 1.5708
+scale = Vector2( 0.13, 0.13 )
+texture = ExtResource( 2 )
+
+[node name="HeavyCanon" parent="." index="2" instance=ExtResource( 3 )]

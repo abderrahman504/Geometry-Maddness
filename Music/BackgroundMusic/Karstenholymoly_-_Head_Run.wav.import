@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Karstenholymoly_-_Head_Run.wav-2241684d58c5cb98c923bc02f6c47618.sample"
+
+[deps]
+
+source_file="res://Music/BackgroundMusic/Karstenholymoly_-_Head_Run.wav"
+dest_files=[ "res://.import/Karstenholymoly_-_Head_Run.wav-2241684d58c5cb98c923bc02f6c47618.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

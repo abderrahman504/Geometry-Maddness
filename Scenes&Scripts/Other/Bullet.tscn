@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes&Scripts/Other/Bullet.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/BulletOuter.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/BulletInner.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.94915
+
+[node name="Bullet" type="Area2D"]
+z_index = 1
+collision_layer = 4
+collision_mask = 16
+script = ExtResource( 2 )
+speed = 700
+
+[node name="Inner" type="Sprite" parent="."]
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+position = Vector2( 0.0819368, 0.0204844 )
+rotation = 1.5708
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+
+[node name="Outer" type="Sprite" parent="."]
+modulate = Color( 0.4, 0.4, 0.4, 1 )
+position = Vector2( 0.0819368, 0.0204844 )
+rotation = 1.5708
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 1.5708
+shape = SubResource( 1 )
+disabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]

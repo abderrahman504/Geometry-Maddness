@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/F_Fact_-_Beautiful_(feat_Wildsilences_and_Karstenholymoly).wav-aa5e41d71b0fa4cd3a06e9247038ec07.sample"
+
+[deps]
+
+source_file="res://Music/BackgroundMusic/F_Fact_-_Beautiful_(feat_Wildsilences_and_Karstenholymoly).wav"
+dest_files=[ "res://.import/F_Fact_-_Beautiful_(feat_Wildsilences_and_Karstenholymoly).wav-aa5e41d71b0fa4cd3a06e9247038ec07.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

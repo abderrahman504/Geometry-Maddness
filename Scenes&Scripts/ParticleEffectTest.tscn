@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Shapes/Square.png" type="Texture" id=1]
+[ext_resource path="res://Scenes&Scripts/Characters/Square.tscn" type="PackedScene" id=2]
+
+[node name="ParticleEffectTest" instance=ExtResource( 2 )]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="1"]
+scale = Vector2( 0.3, 0.3 )
+amount = 3
+lifetime = 2.0
+explosiveness = 1.0
+lifetime_randomness = 0.44
+texture = ExtResource( 1 )
+spread = 31.25
+gravity = Vector2( 0, 0 )
+initial_velocity = 6000.0
+initial_velocity_random = 0.24
+linear_accel = -4000.0

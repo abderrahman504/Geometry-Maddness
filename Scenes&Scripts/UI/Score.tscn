@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/justicegradout.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes&Scripts/UI/Score.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 25
+outline_size = 2
+outline_color = Color( 0.0273438, 0.0265961, 0.0265961, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "ScaleUp"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 2, 2 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.764706, 0.0313726, 0.972549, 1 ), Color( 0.129412, 0.933333, 0.858824, 1 ), Color( 0.913725, 0.0705882, 0.941176, 1 ), Color( 0.0745098, 0.929412, 0.768627, 1 ) ]
+}
+
+[node name="Score" type="Node2D"]
+scale = Vector2( 0.1, 0.1 )
+script = ExtResource( 2 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = -54.6317
+margin_top = -26.3158
+margin_right = 53.3683
+margin_bottom = 23.6842
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[tornado radius=2 freq=5]+100"
+text = "+100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ScaleUp = SubResource( 2 )

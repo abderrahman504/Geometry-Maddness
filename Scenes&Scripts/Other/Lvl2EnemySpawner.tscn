@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes&Scripts/Other/EnemySpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes&Scripts/Other/Lvl2EnemySpawner.gd" type="Script" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[node name="Lvl2EnemySpawner" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+baseEnemySpawningTime = 4
+
+[node name="Path2D" parent="." index="0"]
+curve = SubResource( 1 )

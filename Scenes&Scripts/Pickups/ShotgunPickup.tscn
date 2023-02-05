@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes&Scripts/Pickups/ShotgunPickup.gd" type="Script" id=1]
+[ext_resource path="res://Scenes&Scripts/Pickups/BaseGunPickup.tscn" type="PackedScene" id=2]
+
+[node name="ShotgunPickup" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 0.0117647, 0.639216, 0.152941, 1 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes&Scripts/Guns/BaseGun.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes&Scripts/Guns/Machinegun.gd" type="Script" id=2]
+
+[node name="Machinegun" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+fireRate = 4.0
+bulletDamage = 2
+ammoConsumption = 9
